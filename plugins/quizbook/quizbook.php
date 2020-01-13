@@ -22,4 +22,4 @@
 * Regenerate URL tables upon activation
 */
 
-register_activation_hook( __FILE__, 'rewrite_flush' );
+register_activation_hook( __FILE__, 'quizbook_rewrite_flush' );
