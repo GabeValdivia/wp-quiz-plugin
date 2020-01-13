@@ -82,12 +82,41 @@ function quizbook_metaboxes() { ?>
 
 function quizbook_save_metaboxes($post_id, $post, $update) {
     $question_1 = $question_2 = $question_3 = $question_4 = $question_5 = $correct_answer = '';
-
+    // question 1
     if(isset($_POST['qb_question_1'] )) {
-        $question_1 = sanitize_text_field( $_POST['$qb_question_1'] );
+        $question_1 = sanitize_text_field( $_POST['qb_question_1'] );
     }
-
     update_post_meta($post_id, 'qb_question_1', $question_1 );
+
+    // question 2
+    if(isset($_POST['qb_question_2'] )) {
+        $question_2 = sanitize_text_field( $_POST['qb_question_2'] );
+    }
+    update_post_meta($post_id, 'qb_question_2', $question_2 );
+
+    // question 3
+    if(isset($_POST['qb_question_3'] )) {
+        $question_3 = sanitize_text_field( $_POST['qb_question_3'] );
+    }
+    update_post_meta($post_id, 'qb_question_3', $question_3 );
+
+    // question 4
+    if(isset($_POST['qb_question_4'] )) {
+        $question_4 = sanitize_text_field( $_POST['qb_question_4'] );
+    }
+    update_post_meta($post_id, 'qb_question_4', $question_4 );
+
+    // question 1
+    if(isset($_POST['qb_question_5'] )) {
+        $question_5 = sanitize_text_field( $_POST['qb_question_5'] );
+    }
+    update_post_meta($post_id, 'qb_question_5', $question_5 );
+
+    // correct answer
+    if(isset($_POST['correct_answer'] )) {
+        $correct = sanitize_text_field( $_POST['correct_answer'] );
+    }
+    update_post_meta($post_id, 'correct_answer', $correct );
 }
 
 add_action('save_post', 'quizbook_save_metaboxes', 10, 3);
