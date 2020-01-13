@@ -79,3 +79,28 @@ function quizbook_metaboxes() { ?>
 
 <?php
 }
+
+function quizbook_save_metaboxes($post_id, $post, $update) {
+    $question_1 = $question_2 = $question_3 = $question_4 = $question_5 = $correct_answer = '';
+
+    if(isset($_POST['qb_question_1'] )) {
+        $question_1 = sanitize_text_field( $_POST['$qb_question_1'] );
+    }
+
+    update_post_meta($post_id, 'qb_question_1', $question_1 );
+}
+
+add_action('save_post', 'quizbook_save_metaboxes', 10, 3);
+
+
+
+
+
+
+
+
+
+
+
+
+
