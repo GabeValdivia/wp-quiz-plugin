@@ -32,10 +32,16 @@ register_activation_hook( __FILE__, 'quizbook_rewrite_flush' );
 
 
  /*
-* Add Roles and capabilities to quizzes
+* Add Roles to quizzes
 */
 
  require_once plugin_dir_path( __FILE__ ) . 'includes/roles.php';
-
  register_activation_hook( __FILE__, 'quizbook_create_role' );
  register_deactivation_hook( __FILE__, 'quizbook_remove_role' );
+
+  /*
+* Add Capabilities to quizzes
+*/
+
+ register_activation_hook( __FILE__, 'quizbook_add_capabilities' );
+ register_deactivation_hook( __FILE__, 'quizbook_remove_capabilities' );
