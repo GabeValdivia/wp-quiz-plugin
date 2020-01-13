@@ -39,9 +39,15 @@ register_activation_hook( __FILE__, 'quizbook_rewrite_flush' );
  register_activation_hook( __FILE__, 'quizbook_create_role' );
  register_deactivation_hook( __FILE__, 'quizbook_remove_role' );
 
-  /*
+/*
 * Add Capabilities to quizzes
 */
 
  register_activation_hook( __FILE__, 'quizbook_add_capabilities' );
  register_deactivation_hook( __FILE__, 'quizbook_remove_capabilities' );
+
+/*
+* Add Shortcode
+*/
+
+require_once plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
