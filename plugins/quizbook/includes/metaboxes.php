@@ -13,7 +13,9 @@ add_action('add_meta_boxes', 'quizbook_agregar_metaboxes');
 * Add HTML content to metabox
 */
 
-function quizbook_metaboxes($post) { ?>
+function quizbook_metaboxes($post) { 
+    wp_nonce_field(basename(__FILE__),'quizbook_nonce');
+    ?>
     <table>
         <tr>
             <th class="row-title">
@@ -82,6 +84,18 @@ function quizbook_metaboxes($post) { ?>
 }
 
 function quizbook_save_metaboxes($post_id, $post, $update) {
+
+    // Security clauses
+    if(!isset($_POST['quizbook_nonce']) || !wp_verify_nonce($_POST['quizbook_nonce'], basename(__FILE__) ) ) {
+        return $post_id;
+    }
+    if(!current_user_can( 'edit_post', $post_id )) {
+        return $post_id;
+    }
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return $post_id;
+    }
+
     $question_1 = $question_2 = $question_3 = $question_4 = $question_5 = $correct_answer = '';
     // question 1
     if(isset($_POST['qb_question_1'] )) {
