@@ -11,4 +11,15 @@
  Text Domain: quizbook
 */
 
+/*
+* Add Quizzes post-types
+*/
+
  require_once plugin_dir_path( __FILE__ ) . 'includes/posttypes.php';
+
+
+/*
+* Regenerate URL tables upon activation
+*/
+
+register_activation_hook( __FILE__, 'rewrite_flush' );

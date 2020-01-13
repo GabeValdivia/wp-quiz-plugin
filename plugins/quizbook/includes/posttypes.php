@@ -48,3 +48,12 @@ function post_type() {
 }
 
 add_action( 'init', 'post_type' );
+
+/*
+* Flush Rewrite
+*/
+
+function rewrite_flush(){
+    post_type();
+    flush_rewrite_rules();
+}
