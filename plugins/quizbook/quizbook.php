@@ -51,3 +51,9 @@ register_activation_hook( __FILE__, 'quizbook_rewrite_flush' );
 */
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
+
+/*
+* Add Functions file
+*/
+
+require_once plugin_dir_path( __FILE__ ) . 'includes/functions.php';
