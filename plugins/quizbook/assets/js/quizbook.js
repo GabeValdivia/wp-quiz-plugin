@@ -16,6 +16,10 @@
             id_answers.push(value.id);
         });
 
-        console.log(id_answers);
+        var data = {
+            action: 'quizbook_results',
+            data: id_answers
+        }
+        console.log(data);
     });
 })(jQuery);
