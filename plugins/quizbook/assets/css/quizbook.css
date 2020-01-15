@@ -1,3 +1,30 @@
-body {
-    color: red;
+#quizbook {
+    background-color: #f1f1f1;
+}
+
+.quizbook ul {
+    list-style: none;
+}
+
+.quizbook ul li {
+    padding: 30px;
+}
+
+.quizbook ul li h2 {
+    font-size: 20px;
+    border-bottom: 3px solid cornflowerblue;
+    padding-bottom: 10px;
+}
+
+.quizbook ul li .answer {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 20px;
+}
+
+.quizbook ul li .answer:hover {
+    background-color: cornflowerblue;
+    color: #fff;
+    cursor: pointer;
 }
