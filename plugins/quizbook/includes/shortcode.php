@@ -2,13 +2,14 @@
 if(! defined('ABSPATH')) exit;
 
 /*
-* Use: [quizbook]
+* Use: [quizbook questions="" order=""]
 */
 
-function quizbook_shortcode(){ 
+function quizbook_shortcode( $atts ){ 
     $args = array(
         'post_type' => 'quizes',
-        'posts_per_page' => 20
+        'posts_per_page' => $atts['questions'],
+        'orderby' => $atts['order']
     );
     $quizbook = new WP_Query($args);
     ?>
