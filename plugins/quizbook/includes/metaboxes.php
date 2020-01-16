@@ -24,42 +24,42 @@ function quizbook_metaboxes($post) {
         </tr>
         <tr>
             <th class="row-title">
-                <label for="question_1">a)</label>
+                <label for="question_a">a)</label>
             </th>
             <td>
-                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_1', true )); ?>" type="text" id="question_1" name="qb_question_1" class="regular-text">
+                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_a', true )); ?>" type="text" id="question_a" name="qb_question_a" class="regular-text">
             </td>
         </tr>
         <tr>
             <th class="row-title">
-                <label for="question_2">b)</label>
+                <label for="question_b">b)</label>
             </th>
             <td>
-                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_2', true )); ?>" type="text" id="question_2" name="qb_question_2" class="regular-text">
+                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_b', true )); ?>" type="text" id="question_b" name="qb_question_b" class="regular-text">
             </td>
         </tr>
         <tr>
             <th class="row-title">
-                <label for="question_3">c)</label>
+                <label for="question_c">c)</label>
             </th>
             <td>
-                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_3', true )); ?>" type="text" id="question_3" name="qb_question_3" class="regular-text">
+                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_c', true )); ?>" type="text" id="question_c" name="qb_question_c" class="regular-text">
             </td>
         </tr>
         <tr>
             <th class="row-title">
-                <label for="question_4">d)</label>
+                <label for="question_d">d)</label>
             </th>
             <td>
-                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_4', true )); ?>" type="text" id="question_4" name="qb_question_4" class="regular-text">
+                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_d', true )); ?>" type="text" id="question_d" name="qb_question_d" class="regular-text">
             </td>
         </tr>
         <tr>
             <th class="row-title">
-                <label for="question_5">e)</label>
+                <label for="question_e">e)</label>
             </th>
             <td>
-                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_5', true )); ?>" type="text" id="question_5" name="qb_question_5" class="regular-text">
+                <input value="<?php echo esc_attr(get_post_meta( $post->ID, 'qb_question_e', true )); ?>" type="text" id="question_e" name="qb_question_e" class="regular-text">
             </td>
         </tr>
         <tr>
@@ -98,34 +98,34 @@ function quizbook_save_metaboxes($post_id, $post, $update) {
 
     $question_1 = $question_2 = $question_3 = $question_4 = $question_5 = $correct_answer = '';
     // question 1
-    if(isset($_POST['qb_question_1'] )) {
-        $question_1 = sanitize_text_field( $_POST['qb_question_1'] );
+    if(isset($_POST['qb_question_a'] )) {
+        $question_1 = sanitize_text_field( $_POST['qb_question_a'] );
     }
-    update_post_meta($post_id, 'qb_question_1', $question_1 );
+    update_post_meta($post_id, 'qb_question_a', $question_1 );
 
     // question 2
-    if(isset($_POST['qb_question_2'] )) {
-        $question_2 = sanitize_text_field( $_POST['qb_question_2'] );
+    if(isset($_POST['qb_question_b'] )) {
+        $question_2 = sanitize_text_field( $_POST['qb_question_b'] );
     }
-    update_post_meta($post_id, 'qb_question_2', $question_2 );
+    update_post_meta($post_id, 'qb_question_b', $question_2 );
 
     // question 3
-    if(isset($_POST['qb_question_3'] )) {
-        $question_3 = sanitize_text_field( $_POST['qb_question_3'] );
+    if(isset($_POST['qb_question_c'] )) {
+        $question_3 = sanitize_text_field( $_POST['qb_question_c'] );
     }
-    update_post_meta($post_id, 'qb_question_3', $question_3 );
+    update_post_meta($post_id, 'qb_question_c', $question_3 );
 
     // question 4
-    if(isset($_POST['qb_question_4'] )) {
-        $question_4 = sanitize_text_field( $_POST['qb_question_4'] );
+    if(isset($_POST['qb_question_d'] )) {
+        $question_4 = sanitize_text_field( $_POST['qb_question_d'] );
     }
-    update_post_meta($post_id, 'qb_question_4', $question_4 );
+    update_post_meta($post_id, 'qb_question_d', $question_4 );
 
     // question 1
-    if(isset($_POST['qb_question_5'] )) {
-        $question_5 = sanitize_text_field( $_POST['qb_question_5'] );
+    if(isset($_POST['qb_question_e'] )) {
+        $question_5 = sanitize_text_field( $_POST['qb_question_e'] );
     }
-    update_post_meta($post_id, 'qb_question_5', $question_5 );
+    update_post_meta($post_id, 'qb_question_e', $question_5 );
 
     // correct answer
     if(isset($_POST['correct_answer'] )) {

@@ -24,15 +24,7 @@ function quizbook_results() {
         //$letter_correct[1] = letter answer
         $letter_correct = explode(':', $correct);
 
-        $answer_array = array(
-            1 => 'a',
-            2 => 'b',
-            3 => 'c',
-            4 => 'd',
-            5 => 'eS'
-        );
-
-        if($letter_correct[1] === $answer_array[ $question[1] ]) {
+                if($letter_correct[1] === $question[1] ) {
             $result += 10;
         }
 
