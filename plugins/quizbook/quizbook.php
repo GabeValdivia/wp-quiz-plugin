@@ -63,3 +63,9 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/functions.php';
 */
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/scripts.php';
+
+/*
+* Get exam results
+*/
+
+require_once plugin_dir_path( __FILE__ ) . 'includes/results.php';
