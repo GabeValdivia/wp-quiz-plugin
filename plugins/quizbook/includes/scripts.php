@@ -1,4 +1,5 @@
 <?php 
+if(! defined('ABSPATH')) exit;
 
 // Styles and scripts for the front end display
 
