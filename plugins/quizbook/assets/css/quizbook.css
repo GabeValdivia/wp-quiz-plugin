@@ -29,3 +29,24 @@
     color: #fff;
     cursor: pointer;
 }
+
+#quizbook_result {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.approved {
+    background-color: #248c24;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.not-approved {
+    background-color: #c20000;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+}

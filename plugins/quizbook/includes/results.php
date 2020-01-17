@@ -25,7 +25,7 @@ function quizbook_results() {
         $letter_correct = explode(':', $correct);
 
                 if($letter_correct[1] === $question[1] ) {
-            $result += 10;
+            $result += 20;
         }
 
     }

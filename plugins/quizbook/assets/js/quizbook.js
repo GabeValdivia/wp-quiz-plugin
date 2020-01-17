@@ -26,7 +26,15 @@
             type: 'post',
             data: data
         }).done(function(answer) {
-            console.log(answer);
+            var course;
+            if(answer.score > 60) {
+                course = 'approved';
+            } else {
+                course = 'not-approved';
+            }
+
+            $('#quizbook-result').append('Total: ' + answer.score).addClass(course);
+            $('#quizbook_btn_submit').remove();
         });
 
         

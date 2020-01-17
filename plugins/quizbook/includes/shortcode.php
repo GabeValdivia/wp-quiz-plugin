@@ -41,6 +41,8 @@ function quizbook_shortcode( $atts ){
         </ul>
     </div>
     <input type="submit" value="Submit" id="quizbook_btn_submit">
+
+    <div id="quizbook-result"></div>
     </form><!-- form -->
 
 <?php
