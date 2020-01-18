@@ -36,3 +36,8 @@ function quizbook_exam_error_activate() {
 
 require_once plugin_dir_path(__FILE__) . 'includes/posttypes.php';
 register_activation_hook(__FILE__, 'quizbook_exams_rewrite_flush'); 
+
+// Adds roles and permissions for Quizbook Exam
+require_once plugin_dir_path( __FILE__ ) . 'includes/roles.php';
+register_activation_hook( __FILE__, 'quizbook_exams_add_capabilities' );
+register_deactivation_hook( __FILE__, 'quizbook_exams_remove_capabilities' );
