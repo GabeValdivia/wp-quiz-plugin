@@ -2,7 +2,7 @@
 /*
  Plugin Name: Quizbook
  Plugin URI:
- Description: Plugin for adding quizzes or questionnaires in WordPress.
+ Description: Plugin for adding quizzes in WordPress.
  Version: 1.0
  Author: Gabriel S Valdivia
  URL: https://portfolio.gabeswebcoding.com
