@@ -10,6 +10,7 @@
  License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
  Text Domain: quizbook
 */
+if(! defined('ABSPATH')) exit;
 
 /*
 * Add Quizzes post-types
