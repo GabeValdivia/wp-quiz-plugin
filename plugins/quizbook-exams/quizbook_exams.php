@@ -41,3 +41,7 @@ register_activation_hook(__FILE__, 'quizbook_exams_rewrite_flush');
 require_once plugin_dir_path( __FILE__ ) . 'includes/roles.php';
 register_activation_hook( __FILE__, 'quizbook_exams_add_capabilities' );
 register_deactivation_hook( __FILE__, 'quizbook_exams_remove_capabilities' );
+
+
+// Adds Metaboxes to Quizbook Exams post types
+require_once plugin_dir_path( __FILE__ ) . 'includes/metaboxes.php';
