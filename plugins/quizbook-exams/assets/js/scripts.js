@@ -1,3 +1,3 @@
 (function($) {
-    console.log("It works!");
+    $('.questions_select').chosen();
 })(jQuery);
