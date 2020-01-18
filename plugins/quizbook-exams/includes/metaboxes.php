@@ -9,7 +9,9 @@ function quizbook_exams_add_metaboxes() {
 
 add_action('add_meta_boxes', 'quizbook_exams_add_metaboxes');
 
-function quizbook_exams_metaboxes() { ?>
+function quizbook_exams_metaboxes() { 
+    wp_nonce_field(basename(__FILE__), 'quizbook_exams_nonce');    
+?>
 
     <table class="form-table">
         <tr>
@@ -31,7 +33,7 @@ function quizbook_exams_metaboxes() { ?>
                         
                         if($questions):
                         ?>
-                            <select data-placeholder="Choose a Question..." class="questions_select" multiple tabindex="4">
+                            <select data-placeholder="Choose a Question..." class="questions_select" multiple tabindex="4" name="quizbook_exam[]">
                                 <option value=""></option>
                                 <?php 
                                     foreach ($questions as $question): ?>
@@ -55,3 +57,32 @@ function quizbook_exams_metaboxes() { ?>
 
 <?php
 }
+
+function quizbook_exams_save_metaboxes($post_id, $post, $update) {
+
+    // Security clauses
+    if(!isset($_POST['quizbook_exams_nonce']) || !wp_verify_nonce($_POST['quizbook_exams_nonce'], basename(__FILE__) ) ) {
+        return $post_id;
+    }
+    if(!current_user_can( 'edit_post', $post_id )) {
+        return $post_id;
+    }
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return $post_id;
+    }
+
+    $answers = '';
+    $answer_array = array();
+
+    if(isset($_POST['quizbook_exam'])){
+        $answers = $_POST['quizbook_exam'];
+
+        foreach ($answers as $answer):
+            $answer_array[] = sanitize_text_field( $answer );
+        endforeach;
+    }
+    update_post_meta( $post_id, 'quizbook_exam', maybe_serialize($answer_array) );
+
+}
+
+add_action('save_post', 'quizbook_exams_save_metaboxes', 10, 3);
