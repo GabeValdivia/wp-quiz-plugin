@@ -48,3 +48,6 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/metaboxes.php';
 
 // Adds CSS y JS to Plugin
 require_once plugin_dir_path( __FILE__ ) . 'includes/scripts.php';
+
+// Adds shortcode needed to print exams by ID
+require_once plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';

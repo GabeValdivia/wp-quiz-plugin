@@ -2,14 +2,22 @@
 if(! defined('ABSPATH')) exit;
 
 /*
-* Use: [quizbook_exam questions="" order=""]
+* Use: [quizbook_exam questions="" order="" id=""]
 */
 
 function quizbook_examp_shortcode( $atts ){ 
+
+    //Read shortcode ID for the exam
+    $exam_id = (int) $atts['id'];
+
+    $questions = maybe_unserialize( get_post_meta( $exam_id, 'quizbook_exam', true ) );
+
+
     $args = array(
         'post_type' => 'quizes',
         'posts_per_page' => $atts['questions'],
-        'orderby' => $atts['order']
+        'orderby' => $atts['order'],
+        'post__in' => $questions
     );
     $quizbook = new WP_Query($args);
     ?>
