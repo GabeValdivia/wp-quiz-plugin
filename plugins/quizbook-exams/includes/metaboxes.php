@@ -38,9 +38,14 @@ function quizbook_exams_metaboxes($post) {
                             <select data-placeholder="Choose a Question..." class="questions_select" multiple tabindex="4" name="quizbook_exam[]">
                                 <option value=""></option>
                                 <?php 
-                                    foreach ($questions as $question): ?>
-                                    <option <?php echo in_array($question->ID, $selected) ? 'selected' : '';  ?> value="<?php echo $question->ID; ?>"><?php echo $question->post_title; ?></option>
-                                <?php endforeach; ?>                                    
+                                    foreach ($questions as $question): 
+                                        
+                                        if($selected){ ?>
+                                            <option <?php echo in_array($question->ID, $selected) ? 'selected' : '';  ?> value="<?php echo $question->ID; ?>"><?php echo $question->post_title; ?></option>
+                                        <?php } else { ?>
+                                            <option value="<?php echo $question->ID; ?>"><?php echo $question->post_title; ?></option>
+                                       <?php }                                  
+                                       endforeach; ?>                                    
                             </select>
                         <?php
                         else:

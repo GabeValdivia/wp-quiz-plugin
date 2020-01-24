@@ -51,3 +51,6 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/scripts.php';
 
 // Adds shortcode needed to print exams by ID
 require_once plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
+
+// Adds new columns to the admin panel for exams post type
+require_once plugin_dir_path( __FILE__ ) . 'includes/columns.php';
