@@ -9,7 +9,7 @@ function quizbook_exams_add_metaboxes() {
 
 add_action('add_meta_boxes', 'quizbook_exams_add_metaboxes');
 
-function quizbook_exams_metaboxes() { 
+function quizbook_exams_metaboxes($post) { 
     wp_nonce_field(basename(__FILE__), 'quizbook_exams_nonce');    
 ?>
 
@@ -33,15 +33,15 @@ function quizbook_exams_metaboxes() {
                         
                         if($questions):
                         ?>
+
+                        <?php $selected = maybe_unserialize( get_post_meta( $post->ID, 'quizbook_exam', true ) ); ?>
                             <select data-placeholder="Choose a Question..." class="questions_select" multiple tabindex="4" name="quizbook_exam[]">
                                 <option value=""></option>
                                 <?php 
                                     foreach ($questions as $question): ?>
                                     <option value="<?php echo $question->ID; ?>"><?php echo $question->post_title; ?></option>
-                                <?php endforeach; ?>
-                                    
+                                <?php endforeach; ?>                                    
                             </select>
-
                         <?php
                         else:
                             echo "<p>You need to add questions via Quize menu option on the left menu.</p>";
