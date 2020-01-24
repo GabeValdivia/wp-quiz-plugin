@@ -39,7 +39,7 @@ function quizbook_exams_metaboxes($post) {
                                 <option value=""></option>
                                 <?php 
                                     foreach ($questions as $question): ?>
-                                    <option value="<?php echo $question->ID; ?>"><?php echo $question->post_title; ?></option>
+                                    <option <?php echo in_array($question->ID, $selected) ? 'selected' : '';  ?> value="<?php echo $question->ID; ?>"><?php echo $question->post_title; ?></option>
                                 <?php endforeach; ?>                                    
                             </select>
                         <?php
